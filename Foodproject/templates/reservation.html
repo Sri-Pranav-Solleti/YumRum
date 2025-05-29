@@ -1,0 +1,356 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - YumRum Hotel & Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+       
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            color: #fff; 
+            background: url('https://images.piclumen.com/community/20250213/13/de34ed1c-d03c-4329-8c1e-b2e6e0c8651a.webp') no-repeat center center/cover; 
+            background-attachment: fixed; 
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #fff; 
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        
+        header {
+            background: rgba(0, 0, 0, 0.5); 
+            color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            gap: 15px; 
+        }
+
+        .logo {
+            width: 50px; 
+            height: auto;
+        }
+
+        .restaurant-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6f61; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        
+        .reservation-section {
+            padding: 150px 0 100px; 
+            position: relative;
+            color: #fff;
+        }
+
+        .reservation-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+        .reservation-form {
+            background: rgba(0, 0, 0, 0.7); 
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reservation-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff6f61; 
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #ddd; 
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1); 
+            color: #fff; 
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ff6f61; 
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .form-group .btn:hover {
+            background: #e65a50;
+            transform: translateY(-3px);
+        }
+
+        /* Room Type Cards */
+        .room-type-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .room-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
+        }
+
+        .room-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #ff6f61;
+        }
+
+        .room-card p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+       
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 100px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6f61;
+        }
+        #additional{
+            border-radius: 50%;
+        }
+        header {
+    background: rgba(0, 0, 0, 0.8); /* Darker background */
+    color: #fff;
+    padding: 15px 0; /* Adjust padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    gap: 15px; /* Space between logo and text */
+}
+
+.logo {
+    width: 60px; /* Adjust size */
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-title {
+    font-size: 1.8rem; /* Adjust font size */
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+  
+    <header>
+        <div class="container header-content">
+            <img src="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp" alt="YumRum Logo" class="logo">
+            <span class="header-title">YumRum</span>
+        </div>
+    </header>
+    
+   
+    <section class="reservation-section">
+        <div class="container">
+            <div class="reservation-form">
+                <h2>Make a Reservation</h2>
+                <form action="#" method="POST">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-In Date</label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-Out Date</label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" placeholder="Enter number of guests" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" placeholder="Any special requests?"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">Book Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 YumRum Hotel & Restaurant. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        function selectRoom(roomType) {
+            const roomCards = document.querySelectorAll('.room-card');
+            roomCards.forEach(card => card.classList.remove('selected'));
+            event.currentTarget.classList.add('selected');
+            document.getElementById('room-type').value = roomType;
+        }
+    </script>
+</body>
+</html>

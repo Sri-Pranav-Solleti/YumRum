@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" type="image/png" href="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: url('https://images.piclumen.com/community/20250213/13/de34ed1c-d03c-4329-8c1e-b2e6e0c8651a.webp') no-repeat center center/cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    padding-top: 80px;
+    text-align: center;
+}
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.image-out{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.image{
+
+    width: 700px;
+}
+
+.carousel-inner img{
+    border-radius: 5rem;
+    width: 700px;
+    height: 700px;
+    padding: 10px;
+}
+
+
+
+h1 {
+    margin-left: 50px;
+    display: inline-block; 
+    font-family: cursive;
+    color: white !important;  
+    background-color: rgba(0, 0, 0, 0.5);  
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: #ff6f61;
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <img src="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp" alt="YumRum Logo" class="logo">
+        <span class="header-title">YumRum</span>
+    </div>
+</header>
+<br>
+
+<h1>Interior</h1>
+<div class="image-out">
+    <div class="image">
+        <div id="carouselInterior" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselInterior" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselInterior" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselInterior" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://i.pinimg.com/736x/e1/2c/b5/e12cb5bf6722cc47bfcf54562f777160.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/736x/04/f3/f4/04f3f4c7091ca51525c5f9d633e0ef62.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/736x/73/83/2b/73832bfc76daa8f0a9defecc0e1f1a78.jpg" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselInterior" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselInterior" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<h1>Chefs & Staff</h1>
+<div class="image-out">
+    <div class="image">
+        <div id="carouselStaff" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselStaff" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselStaff" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselStaff" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://i.pinimg.com/736x/d1/2a/43/d12a439067c095965b6723915110ca1e.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/736x/51/21/b1/5121b16f5e212f744e45d7410cf58bce.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/736x/71/42/32/714232c2bf69a6db739ba4d3d6c309f0.jpg" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselStaff" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselStaff" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<h1>Special Items</h1>
+<div class="image-out">
+    <div class="image">
+        <div id="carouselSpecialItems" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselSpecialItems" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselSpecialItems" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselSpecialItems" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://i.pinimg.com/736x/1d/98/cf/1d98cf0172a7d959392b3a78635b9802.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/736x/23/12/a8/2312a8a2bb8d87a34bba877b691273b7.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://i.pinimg.com/736x/de/3d/3a/de3d3a17ea6445842c4cc55f9a1d0444.jpg" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSpecialItems" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSpecialItems" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 YumRum Hotel & Restaurant. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

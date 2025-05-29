@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - YumRum Hotel & Restaurant</title>
+
+    <link rel="icon" type="image/png"
+        href="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://images.piclumen.com/community/20250213/13/de34ed1c-d03c-4329-8c1e-b2e6e0c8651a.webp') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        .signup-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .signup-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .input-group input::placeholder {
+            color: #ddd;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 111, 97, 0.4);
+        }
+
+        .btn:hover {
+            background: #e65a50;
+            transform: scale(1.05);
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .login-link a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            display: block;
+            visibility: visible;
+            color: #ff6f61;
+            font-size: 0.8rem;
+            margin-top:5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="signup-container">
+        <h2>Sign Up for YumRum</h2>
+        <form method="POST">
+            {%csrf_token%}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" >
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password">
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div class="login-link">
+            Already have an account?
+            <form action="{% url 'login_view' %}" method="get">
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+    
+            function showError(input, message) {
+                let errorElement = input.parentNode.querySelector(".error-message");
+    
+                if (!errorElement) {
+                    errorElement = document.createElement("p");
+                    errorElement.classList.add("error-message");
+                    input.parentNode.appendChild(errorElement);
+                    console.log("Created error message element for:", input.id);
+                }
+    
+                errorElement.textContent = message;
+                console.log("Error message set for", input.id, ":", message);
+            }
+    
+            function clearError(input) {
+                let errorElement = input.parentNode.querySelector(".error-message");
+                if (errorElement) {
+                    errorElement.remove();
+                }
+            }
+    
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+    
+            form.addEventListener("submit", function (event) {
+                let isValid = true;
+    
+                if (nameInput.value.trim() === "") {
+                    showError(nameInput, "Full Name is required.");
+                    isValid = false;
+                } else {
+                    clearError(nameInput);
+                }
+    
+                if (!isValidEmail(emailInput.value)) {
+                    showError(emailInput, "Enter a valid email address.");
+                    isValid = false;
+                } else {
+                    clearError(emailInput);
+                }
+    
+                if (passwordInput.value.length < 6) {
+                    showError(passwordInput, "Password must be at least 6 characters long.");
+                    isValid = false;
+                } else {
+                    clearError(passwordInput);
+                }
+    
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        
+        });
+    </script>
+</body>
+
+</html>

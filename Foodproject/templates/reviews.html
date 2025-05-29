@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp">
+    <style>
+                
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: url('https://images.piclumen.com/community/20250213/13/de34ed1c-d03c-4329-8c1e-b2e6e0c8651a.webp') no-repeat center center/cover;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6f61;
+        }
+
+
+        .out{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .box{
+            border-radius: 10%;
+            height: 350px;
+            width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            /* margin: 50px auto; */
+            color: white;
+        }
+
+        .box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .review-form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-form input,
+        .review-form textarea {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .review-form textarea {
+            height: 80px;
+        }
+
+
+        .review-form button {
+            background: #ff6f61;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .review-form button:hover {
+            background: #e85c50;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <img src="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp" alt="YumRum Logo" class="logo">
+            <span class="header-title">YumRum</span>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div class="out">
+        <div class="box">
+            <h2>Customer Reviews</h2>
+            <form method="POST" class="review-form" action="{%url 'reviews'%}">
+                {% csrf_token %}
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <textarea id="feedback" name="desc" placeholder="Your Feedback" required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 YumRum Hotel & Restaurant. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>  
+</body>
+</html>

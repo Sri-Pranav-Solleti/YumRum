@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - YumRum Hotel & Restaurant</title>
+    <link rel="icon" type="image/png" href="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            color: #fff;
+            background: url('https://images.piclumen.com/community/20250213/13/de34ed1c-d03c-4329-8c1e-b2e6e0c8651a.webp') no-repeat center center/cover;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styling */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .header-title {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            position: relative;
+            color: #fff;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .about-text .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6f61;
+            color: #fff;
+            border-radius: 30px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+        }
+
+        .about-text .btn:hover {
+            background: #e65a50;
+            transform: translateY(-5px);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: #ff6f61;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #ff6f61;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 100px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6f61;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container header-content">
+            <img src="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp" alt="YumRum Logo" class="logo">
+            <span class="header-title">YumRum</span>
+        </div>
+    </header>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <img src="https://images.piclumen.com/normal/20250213/20/78f414d3bbcf4e308e2f0818e14f8361.webp" alt="About YumRum">
+                <div class="about-text">
+                    <h2>Welcome to YumRum</h2>
+                    <p>At YumRum, we believe in creating unforgettable experiences. Nestled in the heart of the city, we offer a perfect blend of luxury, comfort, and exceptional service.</p>
+                    <p>Our team is dedicated to ensuring your stay is perfect. Whether you're here for business or leisure, we strive to make every moment memorable.</p>
+                    <a href="#" class="btn">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200x200" alt="">
+                    <h3>Head Chef</h3>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200x200" alt="">
+                    <h3>General Manager</h3>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200x200" alt="">
+                    <h3>Event Coordinator</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 YumRum Hotel & Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

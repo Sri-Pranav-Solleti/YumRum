@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://images.piclumen.com/community/20250213/13/de34ed1c-d03c-4329-8c1e-b2e6e0c8651a.webp') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tick-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tick-mark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #2ecc71;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: popIn 0.5s ease-in-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .tick-mark::after {
+            content: '✔';
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            animation: fadeIn 1.8s ease-in-out;
+        }
+
+        .button {
+            text-decoration: none;
+            background: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.3s ease-in-out;
+            display: inline-block;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .button:hover {
+            background: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tick-container">
+            <div class="tick-mark"></div>
+        </div>
+        <h1>Thank You!</h1>
+        <p>Your order has been placed successfully.</p>
+        <a href="{%url 'home1'%}" class="button">Go to Homepage</a>
+    </div>
+</body>
+
+</html>
